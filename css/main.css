@@ -189,9 +189,10 @@ div.measures {
     background-color: black;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: black;
     padding: 10px;
     text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 h3.heads-inches {
     font-size: 25px;
