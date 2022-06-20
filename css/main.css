@@ -315,6 +315,30 @@ button.reset {
     }   
 }
 
+@media screen and (max-width: 450px) {
+    .header-logo {
+        width: 60%;
+    }
+    div.contact-info {
+        margin-left: 20px;
+    }
+    a.footer-elements {
+        width: 80%;
+        display: block;
+    }
+    body {
+        margin: -15px;
+    }
+    div.measures {
+        margin: 0 0 25px 0;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    body{
+        margin: -25px;
+    }
+}
 @media screen and (min-width: 1000px) {
     div.header {
         background-image: linear-gradient(to bottom, black, rgba(5, 46, 15, 0.5)), url("../images/headerbackground3.jpg");       
