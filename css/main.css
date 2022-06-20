@@ -331,6 +331,12 @@ button.reset {
     .header-logo {
         width: 60%;
     }
+    div.header {
+        height: 30%;
+    }
+    a.header-logo {
+        padding-bottom: 50px;
+    }
     div.contact-info {
         margin-left: 20px;
     }
