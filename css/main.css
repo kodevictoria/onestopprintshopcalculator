@@ -331,6 +331,7 @@ button.reset {
     }
     div.measures {
         margin: 0 0 25px 0;
+        width: 100%;
     }
 }
 
