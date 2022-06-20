@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Onestop Price Calculator</title>
+    <link href="css/main.css" rel="stylesheet">
+    <script src="java/calculation.js"></script>
+    <script src="java/jquery.js"></script>
+</head>
+<body onload="webLoader()">
+    <div id="loader"></div>
+    <div style="display:none;" id="myWeb" class="animateWeb">
+        <header>
+            <div class="header">
+                <a class="header-logo" href="calculator.html"><span class="onestop">Onestop</span> Print Shop</a>
+            </div>
+           
+        </header>
+        <div class="instructions-section">
+            <p class="heading">To use this calculator follow the steps below</p>
+            <ol class="all-instructions">
+                <li class="instructions">Check measurements of the work you want to check it's price</li>
+                <li class="instructions">Depending on the units, scroll to either the Inches or Feet section</li>
+                <li class="instructions">Input the correct measurements into the Width and Height boxes</li>
+                <li class="instructions">Click the Calculate button and scroll down to see your price</li>
+                <li class="instructions">Click the Reset button to Reset the sizes put</li>
+            </ol>
+        </div>
+        <div class="calculator">
+            <div class="measurements-section">
+                <div class="measures">
+                    <h3 class="main-head">INCHES</h3>
+                    <div class="measurements">
+                        <div class="units">
+                            <h3 class="heads-inches">WIDTH <input type="number" class="inputs" id="job-widthin" placeholder="0"></h3>
+                        </div>
+                        <div class="units">
+                            <h3 class="heads-inches">HEIGHT <input type="number" class="inputs" id="job-heightin" placeholder="0"></h3>
+                        </div>
+                        <div class="units">
+                            <h3 class="heads-inches">HOW MANY? <input type="number" class="inputs" id="innumber" placeholder="0"></h3>
+                        </div>
+                    </div>
+                    <div class="buttonsforcalc">
+                        <button class="calculate-price" onclick="calculatePriceIn()">Calculate</button>
+                    </div>
+                </div>
+                <div class="measures">
+                    <h3 class="main-head">FEET</h3>
+                    <div class="measurements">
+                        <div class="units">
+                            <h3 class="heads-inches">WIDTH <input type="number" class="inputs" id="job-widthft" placeholder="0"></h3>
+                        </div>
+                        <div class="units">
+                            <h3 class="heads-inches">HEIGHT <input type="number" class="inputs" id="job-heightft" placeholder="0"></h3>
+                        </div>
+                        <div class="units">
+                            <h3 class="heads-inches">HOW MANY? <input type="number" class="inputs" id="ftnumber" placeholder="0"></h3>
+                        </div>
+                    </div>
+                    <div class="buttonsforcalc">
+                        <button class="calculate-price" onclick="calculatePriceFt()">Calculate</button>
+                    </div>
+                </div>
+            </div>
+            <button class="reset" style="display:block; margin: 0 auto;" onclick="resetUnits()">Reset</button>
+            <h2 class="price-declaration">Your price is N<integer id="calculated-price"></integer></h2>
+        </div>
+        <footer>
+            <h3 class="reach-us">Reach us at</h3>
+            <div class="contact-info">
+                <a href="mailto:onestopbranding@gmail.com" class="footer-elements">onestopbranding@gmail.com</a>
+                <a href="tel:+2348034153844" class="footer-elements">+2348034153844</a>
+                <a href="tel:+2349082857888" class="footer-elements">+2349082857888</a>
+                <a href="https://maps.app.goo.gl/sQLwV81F344mwV7X6" target="_blank" class="footer-elements">2, Alarape Street, Baale New Garage, Lagos.</a>
+            </div>
+            <a class="footer-elements" id="copyright">&copy Copyright Onestop Print Shop 2022</a>
+        </footer>
+    </div>
+</body>
+</html>
