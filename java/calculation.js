@@ -13,7 +13,7 @@ function calculatePriceIn(){
   var inwidth = document.getElementById("job-widthin").value;
   var inheight = document.getElementById("job-heightin").value;
   var innumber = document.getElementById("innumber").value;
-  var inprice = inwidth*inheight*innumber*120/144;
+  var inprice = Math.round(inwidth*inheight*innumber*120/144);
   
   document.getElementById("calculated-price").innerHTML = inprice;
 }
@@ -21,7 +21,7 @@ function calculatePriceFt(){
   var ftwidth = document.getElementById("job-widthft").value;
   var ftheight = document.getElementById("job-heightft").value;
   var ftnumber = document.getElementById("ftnumber").value;
-  var ftprice = ftwidth*ftheight*ftnumber*120;
+  var ftprice = Math.round(ftwidth*ftheight*ftnumber*120);
   
   document.getElementById("calculated-price").innerHTML = ftprice;
 }
@@ -32,4 +32,7 @@ function resetUnits(){
   document.getElementById("job-widthft").value = '';
   document.getElementById("job-heightft").value = '';
   document.getElementById("ftnumber").value = '';
+  document.getElementById("calculated-price").innerHTML = '';
+  document.getElementById("calculated-price").innerHTML = '';
+
 }
