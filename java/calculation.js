@@ -9,30 +9,37 @@ function showPage() {
   document.getElementById("myWeb").style.display = "block";
 }
 
+var pricePerSqrFeet = 120;
 function calculatePriceIn(){
   var inwidth = document.getElementById("job-widthin").value;
   var inheight = document.getElementById("job-heightin").value;
   var innumber = document.getElementById("innumber").value;
-  var inprice = Math.round(inwidth*inheight*innumber*120/144);
+  var inprice = document.getElementById("calculated-price-in")
+  var inprice = Math.round(inwidth*inheight*innumber*pricePerSqrFeet/144);
   
-  document.getElementById("calculated-price").innerHTML = inprice;
+  document.getElementById("calculated-price-in").innerHTML = inprice;
 }
 function calculatePriceFt(){
   var ftwidth = document.getElementById("job-widthft").value;
   var ftheight = document.getElementById("job-heightft").value;
   var ftnumber = document.getElementById("ftnumber").value;
-  var ftprice = Math.round(ftwidth*ftheight*ftnumber*120);
+  var ftprice = document.getElementById("calculated-price-ft")
+  var ftprice = Math.round(ftwidth*ftheight*ftnumber*pricePerSqrFeet);
   
-  document.getElementById("calculated-price").innerHTML = ftprice;
+  document.getElementById("calculated-price-ft").innerHTML = ftprice;
 }
-function resetUnits(){
+function resetUnitsIn(){
   document.getElementById("job-widthin").value = '';
   document.getElementById("job-heightin").value = '';
   document.getElementById("innumber").value = '';
+  document.getElementById("calculated-price-in").innerHTML = '';
+}
+function resetUnitsFt(){
   document.getElementById("job-widthft").value = '';
   document.getElementById("job-heightft").value = '';
   document.getElementById("ftnumber").value = '';
-  document.getElementById("calculated-price").innerHTML = '';
-  document.getElementById("calculated-price").innerHTML = '';
-
+  document.getElementById("calculated-price-ft").innerHTML = '';
 }
+
+document.getElementById("price").innerHTML = pricePerSqrFeet;
+document.getElementById("price2").innerHTML = pricePerSqrFeet;

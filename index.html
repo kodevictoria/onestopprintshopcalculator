@@ -20,79 +20,107 @@
     <meta name="twitter:image" content="images/twitter-thumbnail.png" />
     <link rel="icon" href="images/onestopicon.png" type="image/x-icon">
     <title>Onestop Price Calculator</title>
-    <link href="css/main.css" rel="stylesheet">
-    <script src="java/calculation.js"></script>
-    <script src="java/jquery.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body onload="webLoader()">
     <div id="loader"></div>
-    <div style="display:none;" id="myWeb" class="animateWeb">
-        <header>
-            <div class="header">
+    <div id="myWeb" class="animateWeb" style="display:none">
+        <div class="container-fluid p-0" style="overflow: hidden;">
+            <div class="header w-100">
                 <a class="header-logo" href=""><span class="onestop">Onestop</span> Print Shop</a>
+            </header>
             </div>
-           
-        </header>
-        <div class="instructions-section">
-            <p class="heading">To use this calculator follow the steps below</p>
-            <ol class="all-instructions">
-                <li class="instructions">Check measurements of the work you want to check it's price</li>
-                <li class="instructions">Depending on the units, scroll to either the Inches or Feet section</li>
-                <li class="instructions">Input the correct measurements into the Width and Height boxes</li>
-                <li class="instructions">Click the Calculate button and scroll down to see your price</li>
-                <li class="instructions">Click the Reset button to Reset the sizes put</li>
-            </ol>
-        </div>
-        <div class="calculator">
-            <div class="measurements-section">
-                <div class="measures">
-                    <h3 class="main-head">INCHES</h3>
-                    <div class="measurements">
-                        <div class="units">
-                            <h3 class="heads-inches">WIDTH <input type="number" class="inputs" id="job-widthin" placeholder="0"></h3>
-                        </div>
-                        <div class="units">
-                            <h3 class="heads-inches">HEIGHT <input type="number" class="inputs" id="job-heightin" placeholder="0"></h3>
-                        </div>
-                        <div class="units">
-                            <h3 class="heads-inches">HOW MANY? <input type="number" class="inputs" id="innumber" placeholder="0"></h3>
-                        </div>
-                    </div>
-                    <div class="buttonsforcalc">
-                        <button class="calculate-price" onclick="calculatePriceIn()">Calculate</button>
-                    </div>
-                </div>
-                <div class="measures">
-                    <h3 class="main-head">FEET</h3>
-                    <div class="measurements">
-                        <div class="units">
-                            <h3 class="heads-inches">WIDTH <input type="number" class="inputs" id="job-widthft" placeholder="0"></h3>
-                        </div>
-                        <div class="units">
-                            <h3 class="heads-inches">HEIGHT <input type="number" class="inputs" id="job-heightft" placeholder="0"></h3>
-                        </div>
-                        <div class="units">
-                            <h3 class="heads-inches">HOW MANY? <input type="number" class="inputs" id="ftnumber" placeholder="0"></h3>
-                        </div>
-                    </div>
-                    <div class="buttonsforcalc">
-                        <button class="calculate-price" onclick="calculatePriceFt()">Calculate</button>
+            <div class="row my-4">
+                <div class="card w-75 p-0 mx-auto">
+                    <div class="card-header bg-dark text-white p-3">To use this calculator follow the steps below</div>
+                    <div class="card-text">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Check measurements of the work you want to check it's price</li>
+                            <li class="list-group-item">Depending on the units, scroll to either the Inches or Feet section</li>
+                            <li class="list-group-item">Input the correct measurements into the Width and Height boxes</li>
+                            <li class="list-group-item">Click the Calculate button and scroll down to see your price</li>
+                            <li class="list-group-item">Click the Reset button to Reset the sizes put</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <button class="reset" style="display:block; margin: 0 auto;" onclick="resetUnits()">Reset</button>
-            <h2 class="price-declaration">Your price is N<integer id="calculated-price"></integer></h2>
+            <div class="container-fluid w-100 p-0">
+                <div class="card-group mx-auto mb-5" style="max-width:97%">
+                    <div class="card p-0 my-4 m-auto m-md-2 col-10 col-md-5">
+                        <div class="card-header bg-dark text-white p-2 text-center fs-3">INCHES</div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="job-widthin" name="floating-in-width" placeholder="Enter Width">
+                                    <label for="floating-in-width" class="form-label">Width:</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="job-heightin" name="floating-in-height" placeholder="Enter Height">
+                                    <label for="floating-in-height" class="form-label">Height:</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="innumber" name="floating-in-quantity" placeholder="Enter Quantity">
+                                    <label for="floating-in-quantity" class="form-label">Quantity:</label>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="price" class="form-label">Price Per Square Feet:</label>
+                                    <h3 class="text-muted" id="price"></h3>
+                                </div>
+                                <div class="mb-3">
+                                    <button type="button" class="btn btn-primary" id="calculate" onclick="calculatePriceIn()">Calculate</button>
+                                    <button type="button" class="btn btn-danger" id="reset" onclick = resetUnitsIn()>Reset</button>
+                                </div>
+                            </form>
+                            <h2>Your price is N<integer id="calculated-price-in"></integer></h2>
+                        </div>
+                    </div>
+                    <div class="card p-0 my-4 m-auto m-md-2 col-10 col-md-5">
+                        <div class="card-header bg-dark text-white p-2 text-center fs-3">FEET</div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="job-widthft" name="floating-ft-width" placeholder="Enter Width">
+                                    <label for="floating-ft-width" class="form-label">Width:</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="job-heightft" name="floating-ft-height" placeholder="Enter Height">
+                                    <label for="floating-ft-height" class="form-label">Height:</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control" id="ftnumber" name="floating-ft-quantity" placeholder="Enter Quantity">
+                                    <label for="floating-ft-quantity" class="form-label">Quantity:</label>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="price" class="form-label">Price Per Square Feet:</label>
+                                    <h3 class="text-muted" id="price2"></h3>
+                                </div>
+                                <div class="mb-3">
+                                    <button type="button" class="btn btn-primary" id="calculate" onclick="calculatePriceFt()">Calculate</button>
+                                    <button type="button" class="btn btn-danger" id="reset" onclick = resetUnitsFt()>Reset</button>
+                                </div>
+                            </form>
+                            <h2>Your price is N<integer id="calculated-price-ft"></integer></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <footer>
+        <script src="java/calculation.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+        <!-- <footer>
             <h3 class="reach-us">Reach us at</h3>
-            <div class="contact-info">
+            <div class="contact-info overflow-hidden">
                 <a href="mailto:onestopbranding@gmail.com" class="footer-elements">onestopbranding@gmail.com</a>
                 <a href="tel:+2348034153844" class="footer-elements">+2348034153844</a>
                 <a href="tel:+2349082857888" class="footer-elements">+2349082857888</a>
                 <a href="https://maps.app.goo.gl/sQLwV81F344mwV7X6" target="_blank" class="footer-elements">2, Alarape Street, Baale New Garage, Lagos.</a>
             </div>
             <a class="footer-elements" id="copyright">&copy Copyright Onestop Print Shop 2022</a>
-        </footer>
+        </footer> -->
     </div>
+    <script src="java/calculation.js"></script>
+    <script src="java/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>
