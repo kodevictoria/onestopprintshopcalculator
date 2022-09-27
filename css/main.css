@@ -85,7 +85,7 @@ div.header {
 
 }
 .footer {
-    position:absolute;
+    position: relative;
     bottom:0;
 }
 
