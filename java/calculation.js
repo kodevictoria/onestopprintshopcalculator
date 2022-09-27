@@ -1,7 +1,7 @@
 var showWeb;
 
 function webLoader() {
-  showWeb = setTimeout(showPage, 3000);
+  showWeb = setTimeout(showPage, 1500);
 }
 
 function showPage() {

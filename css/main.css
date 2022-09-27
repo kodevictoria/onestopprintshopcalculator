@@ -80,8 +80,12 @@ div.header {
     text-decoration: none;
     transition-duration: 0.5s;
 }
+.in-touch {
+    border-bottom: 2px solid rgb(224, 140, 13);
 
-footer {
+}
+
+/* footer {
     height: auto;
     background-color: black;
     width: 100%;
@@ -122,7 +126,7 @@ a.footer-elements:hover {
 }
 #copyright:hover {
     color: white;
-}
+} */
 
 span.onestop {
     color: rgb(224, 140, 13);
