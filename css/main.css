@@ -1,5 +1,9 @@
 body {
     margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 #loader {
     position: absolute;
@@ -46,6 +50,9 @@ body {
     to{ bottom:0; opacity:1 }
   }
 
+.main {
+    flex-grow: 1;
+}
 div.header {
     height: 200px;
     background-image: linear-gradient(to bottom, black, rgba(5, 46, 15, 0.5)), url("../images/headerbackground3.jpg");
